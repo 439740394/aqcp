@@ -723,9 +723,6 @@
               border: 1px solid #cccccc;
               height: 39px;
               margin-bottom: 30px;
-              &:nth-of-type(2) {
-                margin-bottom: 19px;
-              }
               input {
                 box-sizing: border-box;
                 line-height: 37px;
@@ -746,6 +743,12 @@
                 }
                 &::-moz-placeholder {
                   color: #cccccc;
+                }
+              }
+              &:nth-of-type(2) {
+                margin-bottom: 19px;
+                input {
+                  background: url("../images/login_password_icon.png") no-repeat 13px center;
                 }
               }
             }
@@ -790,6 +793,13 @@
               .section-right {
                 a {
                   color: $active-color;
+                }
+              }
+            }
+            &:nth-of-type(2) {
+              .login-input:nth-of-type(1) {
+                input {
+                  background: url("../images/login_user_icon.png") no-repeat 13px center;
                 }
               }
             }

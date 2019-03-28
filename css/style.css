@@ -847,9 +847,6 @@
   height: 39px;
   margin-bottom: 30px;
 }
-.wrapper .login-wrapper .login-modal .login-type .tab-section .tab-info .login-input:nth-of-type(2) {
-  margin-bottom: 19px;
-}
 .wrapper .login-wrapper .login-modal .login-type .tab-section .tab-info .login-input input {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -872,6 +869,12 @@
 }
 .wrapper .login-wrapper .login-modal .login-type .tab-section .tab-info .login-input input::-moz-placeholder {
   color: #cccccc;
+}
+.wrapper .login-wrapper .login-modal .login-type .tab-section .tab-info .login-input:nth-of-type(2) {
+  margin-bottom: 19px;
+}
+.wrapper .login-wrapper .login-modal .login-type .tab-section .tab-info .login-input:nth-of-type(2) input {
+  background: url("../images/login_password_icon.png") no-repeat 13px center;
 }
 .wrapper .login-wrapper .login-modal .login-type .tab-section .tab-info button {
   width: 100%;
@@ -925,4 +928,7 @@
 }
 .wrapper .login-wrapper .login-modal .login-type .tab-section .tab-info .login-tips .section-right a {
   color: #63c2a0;
+}
+.wrapper .login-wrapper .login-modal .login-type .tab-section .tab-info:nth-of-type(2) .login-input:nth-of-type(1) input {
+  background: url("../images/login_user_icon.png") no-repeat 13px center;
 }
