@@ -70,6 +70,7 @@
   font-size: 14px;
   color: #666666;
   line-height: 22px;
+  font-weight: normal;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -519,6 +520,7 @@
   font-size: 14px;
   color: #666666;
   padding-left: 6px;
+  font-style: normal;
 }
 .wrapper .teacher-introduction .introduction-list a .introduction-info span {
   display: inline-block;

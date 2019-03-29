@@ -55,6 +55,7 @@
       font-size: $info-font-size;
       color: $default2-color;
       line-height: 22px;
+      font-weight: normal;
       @include ellipsis2(2);
     }
   }
@@ -433,6 +434,7 @@
               font-size: $info-font-size;
               color: $default2-color;
               padding-left: 6px;
+              font-style: normal;
             }
           }
           span {
