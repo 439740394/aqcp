@@ -652,7 +652,7 @@
 /* sidebar */
 .sidebar {
   position: fixed;
-  bottom: 258px;
+  bottom: 112px;
   right: 20px;
 }
 .sidebar .sidebar-container {
