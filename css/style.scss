@@ -23,6 +23,7 @@
     font-weight: normal;
     font-family: 'PingFangSC-Bold';
     line-height: 1;
+    font-weight: normal;
   }
 }
 .list1 {
@@ -401,6 +402,7 @@
         float: right;
         font-size: $tips-font-size;
         color: $default2-color;
+        font-family: 'PingFangSC-Medium';
       }
     }
     .course-list {
@@ -488,6 +490,7 @@
         float: right;
         font-size: $tips-font-size;
         color: $default2-color;
+        font-family: 'PingFangSC-Medium';
       }
     }
     .active-list {
@@ -752,6 +755,7 @@
               input {
                 box-sizing: border-box;
                 line-height: 37px;
+                height: 37px;
                 width: 100%;
                 padding-left: 44px;
                 padding-right: 13px;
