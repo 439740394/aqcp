@@ -28,9 +28,11 @@
 .list1 {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   a {
     display: block;
     width: 224px;
+    margin-bottom: 10px;
     .cover {
       height: 130px;
       width: 100%;
@@ -390,6 +392,17 @@
 .wrapper {
   .safety-course {
     margin-top: 30px;
+    h1 {
+      @include clearfix;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #d9d9d9;
+      a {
+        line-height: 24px;
+        float: right;
+        font-size: $tips-font-size;
+        color: $default2-color;
+      }
+    }
     .course-list {
       margin-top: 25px;
     }
@@ -398,7 +411,7 @@
 /* teacher introduction */
 .wrapper {
   .teacher-introduction {
-    margin-top: 36px;
+    margin-top: 26px;
     background: #f4f4f4;
     h1 {
       padding-top: 32px;
@@ -466,6 +479,17 @@
 .wrapper {
   .safety-active {
     margin-top: 40px;
+    h1 {
+      @include clearfix;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #d9d9d9;
+      a {
+        line-height: 24px;
+        float: right;
+        font-size: $tips-font-size;
+        color: $default2-color;
+      }
+    }
     .active-list {
       margin-top: 25px;
     }
