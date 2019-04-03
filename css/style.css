@@ -141,8 +141,20 @@
 .wrapper .logo-search-wrapper {
   margin-top: 26px;
 }
-.wrapper .logo-search-wrapper a {
+.wrapper .logo-search-wrapper .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .logo-search-wrapper .logo span {
   display: inline-block;
+  font-family: 'hya9gjm';
+  font-size: 30px;
+  color: #333333;
+  padding-left: 10px;
 }
 .wrapper .logo-search-wrapper form {
   width: 400px;

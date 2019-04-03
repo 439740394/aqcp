@@ -16,6 +16,15 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'hya9gjm';
+  src: url("../fonts/hya9gjm.eot");
+  /*IE9+:EOT*/
+  src: url("../fonts/hya9gjm.eot?#iefix") format("embedded-opentype"), url("../fonts/hya9gjm.woff") format("woff"), url("../fonts/hya9gjm.ttf") format("truetype"), url("../fonts/hya9gjm.svg#svgFontName") format("svg");
+  /* iOS 4.1- */
+  font-weight: normal;
+  font-style: normal;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

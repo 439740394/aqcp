@@ -115,8 +115,16 @@
 .wrapper {
   .logo-search-wrapper {
     margin-top: 26px;
-    a {
-      display: inline-block;
+    .logo {
+      display: flex;
+      align-items: center;
+      span {
+        display: inline-block;
+        font-family: 'hya9gjm';
+        font-size: 30px;
+        color: $default1-color;
+        padding-left: 10px;
+      }
     }
     form {
       width: 400px;
