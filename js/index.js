@@ -1,3 +1,17 @@
+/* 搜索选择 */
+$('.type-select span').on('click', function(){
+    if ($(this).next().hasClass('active')) {
+        $(this).next().removeClass('active');
+    } else {
+        $(this).next().addClass('active');
+    }
+});
+$('.type-select li').on('click', function(){
+    var _html = $(this).html();
+    $('.type-select span').html(_html)
+    $(this).parent().removeClass('active');
+});
+
 /* tab */
 $('.tab-nav li').on('click', function(){
     var _index = $(this).index();
