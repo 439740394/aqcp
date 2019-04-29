@@ -9,6 +9,9 @@
 .section-right {
   float: right;
 }
+.placeholder {
+  color: $default2-color!important;
+}
 .wrapper {
   .top, .logo-search-wrapper, .safety-information {
     @include clearfix;
@@ -27,21 +30,28 @@
   }
 }
 .list1 {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  @include clearfix;
   a {
+    float: left;
     display: block;
     width: 224px;
     margin-bottom: 10px;
+    margin-right: 20px;
+    &:nth-of-type(5n) {
+      margin-right: 0;
+    }
     .cover {
       height: 130px;
       border-radius: 6px;
       width: 100%;
       overflow: hidden;
+      position: relative;
       img {
         width: 100%;
         height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
       }
     }
     span {
@@ -79,16 +89,19 @@
   }
 }
 .list-detail-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  @include clearfix;
   .list-item {
+    float: left;
     width: 386px;
-    display: flex;
-    align-items: center;
     margin-bottom: 20px;
+    margin-right: 21px;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
     cursor: pointer;
+    @include clearfix;
     .list-item-img {
+      float: left;
       width: 210px;
       height: 134px;
       border-radius: 6px;
@@ -97,7 +110,10 @@
       img {
         width: 100%;
         height: 100%;
-        transition: transform .5s linear;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .3s linear;
       }
       &:hover {
         img {
@@ -106,9 +122,12 @@
       }
     }
     .list-item-info {
-      flex: 1;
+      float: left;
+      width: 176px;
+      height: 134px;
       color: $default1-color;
       padding-left: 10px;
+      box-sizing: border-box;
       .title {
         font-weight: normal;
         font-size: $title-font-size;
@@ -144,9 +163,8 @@
   height: 60px;
   background: url('../images/play_icon.png') no-repeat;
   background-size: 100% 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-30px, -30px, 0);
+  top: 35px;
+  left: 82px;
 }
 /* top */
 .wrapper {
@@ -157,22 +175,13 @@
       height: 100%;
       .load-tips, .login-tips, .backstage {
         height: 45px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-      }
-      img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-right: 5px;
       }
       a {
         display: inline-block;
         font-size: $info-font-size;
         color: #ffffff;
-        float: left;
         padding-left: 5px;
+        line-height: 45px;
         &.login {
           padding-right: 10px;
         }
@@ -181,16 +190,24 @@
         }
       }
       .login-tips {
-        span {
-          color: #ffffff;
+        @include clearfix;
+        >img, >a, >div {
+          float: left;
+        }
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin-right: 5px;
+          margin-top: 8px;
         }
       }
       .backstage {
         a {
           padding-left: 10px;
           padding-right: 0;
-          line-height: 20px;
-          border-left: 1px solid #ffffff;
+          line-height: 45px;
+          background: url('../images/line.png') no-repeat 0 center;
         }
       }
     }
@@ -201,14 +218,17 @@
   .logo-search-wrapper {
     margin-top: 26px;
     .logo {
-      display: flex;
-      align-items: center;
+      @include clearfix;
+      img, span {
+        float: left;
+      }
       span {
         display: inline-block;
         font-family: 'hya9gjm';
         font-size: 30px;
         color: $default1-color;
         padding-left: 10px;
+        line-height: 39px;
       }
     }
     form {
@@ -218,15 +238,22 @@
         border-radius: 14px;
         border: 1px solid #ebebeb;
         height: 38px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
         margin-top: 2px;
+        @include clearfix;
+        .search-input, .search-btn {
+          float: left;
+          height: 100%;
+        }
         .search-input {
-          display: flex;
+          width: 338px;
+          @include clearfix;
+          .type-select, .search-btn {
+            float: left;
+          }
           .type-select {
             position: relative;
             cursor: pointer;
+            width: 63px;
             span {
               display: inline-block;
               font-size: $info-font-size;
@@ -259,25 +286,31 @@
             }
           }
           input {
-            width: 250px;
-            line-height: 20px;
+            width: 255px;
             font-size: $info-font-size;
-            color: $default2-color;
-            padding: 0 3px 0 10px;
+            color: #cccccc;
+            padding: 0 10px;
+            line-height: 36px;
+            height: 36px;
             &::placeholder {
               color: #cccccc;
+            }
+            &::clear {
+              display: none;
             }
           }
         }
         .search-btn {
           background: $active-color;
-          flex: 1;
           height: 100%;
-          @include wrap-center;
+          width: 60px;
+          border-radius: 0 14px 14px 0;
+          text-indent: 4px;
           button {
-            padding-left: 21px;
+            width: 100%;
             color: #ffffff;
-            background: url("../images/search_icon.png") no-repeat 0 center;
+            line-height: 36px;
+            background: url("../images/search_icon.png") no-repeat 2px center;
             font-size: $info-font-size;
             cursor: pointer;
           }
@@ -548,9 +581,8 @@
     .course-list {
       margin-top: 25px;
       .cover {
-        position: relative;
         img {
-          transition: transform .5s linear;
+          transition: transform .3s linear;
         }
         &:hover {
           img {
@@ -577,22 +609,27 @@
         float: left;
         width: 400px;
         margin-bottom: 30px;
-        @include wrap-center;
         .introduction-img {
+          float: left;
           width: 80px;
           height: 80px;
-          @include wrap-center;
+          position: relative;
           background: $active-color;
           border-radius: 50%;
           img {
+            position: absolute;
+            top: 1px;
+            left: 1px;
             width: 78px;
             height: 78px;
           }
         }
         .introduction-info {
+          float: left;
           flex: 1;
           box-sizing: border-box;
           padding: 0 50px 0 18px;
+          width: 312px;
           h3 {
             font-size: $title-font-size;
             color: $default1-color;
@@ -733,8 +770,12 @@
         padding-bottom: 12px;
         border-top: 1px solid #cccccc;
         border-bottom: 1px solid #cccccc;
-        @include wrap-center;
         position: relative;
+        img {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+        }
         .back-face {
           position: absolute;
           width: 60px;
@@ -742,16 +783,16 @@
           background: $active-color;
           top: 0;
           left: 0;
-          @include wrap-center;
           display: none;
           &.active {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
+            display: table;
           }
           > span {
+            display: table-cell;
+            vertical-align: middle;
             font-size: $info-font-size;
             color: #ffffff;
+            text-align: center;
             line-height: 17px;
           }
         }
@@ -766,7 +807,7 @@
             height: 132px;
             border-radius: 5px;
             border: 1px solid #cccccc;
-            @include wrap-around;
+            @include clearfix;
             .arrow {
               width: 6px;
               height: 11px;
@@ -776,12 +817,24 @@
               background: url("../images/arrow.png") no-repeat 0 0;
             }
             .qrcode-item {
+              margin-right: 4px;
+              margin-left: 8px;
+              margin-top: 8px;
+              float: left;
+              &:nth-child(2) {
+                float: right;
+                margin-right: 8px;
+                margin-left: 4px;
+              }
               width: 90px;
               .img {
                 background: #cccccc;
                 width: 90px;
                 height: 90px;
+                position: relative;
                 img {
+                  top: 0;
+                  left: 0;
                   width: 100%;
                   height: 100%;
                 }
@@ -826,13 +879,13 @@
     right: 0;
     bottom: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     background: rgba(0, 0, 0, .5);
-    @include wrap-center;
     display: none;
     &.active {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
+      display: block;
     }
     .login-modal {
       width: 440px;
@@ -841,7 +894,10 @@
       border-radius: 2px;
       box-sizing: border-box;
       padding: 37px 40px 42px;
-      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-220px) translateY(-182px);
       .back {
         cursor: pointer;
         width: 20px;
@@ -853,7 +909,7 @@
       }
       .login-type {
         .tab-nav {
-          @include wrap-center;
+          @include clearfix;
           li {
             width: 50%;
             float: left;
@@ -923,7 +979,7 @@
                 padding-right: 13px;
                 background: url("../images/login_phone_icon.png") no-repeat 13px center;
                 font-size: $info-font-size;
-                color: $default2-color;
+                color: #cccccc;
                 &::-webkit-input-placeholder{
                   color: #cccccc;
                 }
@@ -958,12 +1014,12 @@
               height: 16px;
               font-size: $tips-font-size;
               .section-left {
-                display: flex;
-                align-items: center;
+                @include clearfix;
                 input {
                   display: none;
                 }
                 label {
+                  float: left;
                   width: 16px;
                   height: 16px;
                   box-sizing: border-box;
@@ -973,18 +1029,23 @@
                   background: url("../images/login_remenber_icon.png") no-repeat center center;
                 }
                 span {
+                  float: left;
                   padding: 0 8px;
                   color: $default2-color;
                   border-right: 1px solid $default2-color;
+                  line-height: 16px;
                 }
                 a {
+                  float: left;
                   color: $default2-color;
                   padding-left: 8px;
+                  line-height: 16px;
                 }
               }
               .section-right {
                 a {
                   color: $active-color;
+                  line-height: 16px;
                 }
               }
             }

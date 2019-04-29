@@ -1,3 +1,4 @@
+
 /* 搜索选择 */
 $('.type-select span').on('click', function(){
     if ($(this).next().hasClass('active')) {
@@ -29,7 +30,6 @@ $('.top .login').on('click', function(){
 /* hide login modal */
 $('.login-modal .back').on('click', function(){
     $('.login-wrapper').removeClass('active');
-    $('.login-wrapper .login-input input').val('');
 });
 
 /* sidebar */
@@ -43,3 +43,24 @@ $('.sidebar-item').on('mouseover', function(){
         $('html , body').animate({scrollTop: 0}, '1000', 'linear');
     }
 });
+
+initPlaceholder('.search-wrapper input', '请输入搜索关键字');
+initPlaceholder('#phonenumber', '请输入手机号');
+initPlaceholder('#password1', '请输入密码');
+initPlaceholder('#username', '请输入账号');
+initPlaceholder('#password2', '请输入密码');
+
+function initPlaceholder (dom, text) {
+    $(dom).on('focus', function(){
+        if ($(this).val() == text ) {
+            $(this).val('');
+        }
+    }).on('blur', function(){
+        if ($(this).val() == '') {
+            $(this).val(text)
+            $(this).removeClass('placeholder')
+        }
+    }).on('input', function(){
+        $(this).addClass('placeholder');
+    });
+}

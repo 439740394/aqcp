@@ -86,6 +86,8 @@ input, button {
     outline: 0;
   }
 }
+input::-ms-clear{display: none!important;}
+input::-ms-reveal{display: none!important;}
 html, body {
   font-family: 'PingFangSC-Medium', 'PingFangSC-Bold', 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', 'Arial', 'sans-serif';
 }
